@@ -27,6 +27,8 @@ namespace reporting.Data
         {
             var _key = $"activity:{logActivity.Id}";
             var _value = JsonSerializer.Serialize(logActivity);
+            Console.WriteLine($"Value:{_value}");
+
             this.c_database.StringSet(_key, _value);
         }
 

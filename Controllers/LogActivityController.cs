@@ -27,6 +27,9 @@ namespace reporting.Controllers
             var _requestId = Request.Headers["X-Request-Id"].ToString();
             var _correlationId = Request.Headers["X-Correlation-Id"].ToString();
 
+            Console.WriteLine($"Act:{logActivityRequest.Activity}");
+            Console.WriteLine($"ActDetail:{logActivityRequest.ActivityDetail}");
+
             var _logActivity = new Entity.LogActivity(
                 Guid.Parse(_correlationId),
                 Guid.Parse(_requestId),
