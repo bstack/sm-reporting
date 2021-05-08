@@ -6,9 +6,9 @@ namespace reporting.Models
 {
     public class LogActivityRequest : IValidatableObject
     {
-        public string Service;
-        public string Activity;
-        public string ActivityDetail;
+        public string Service { get; set; }
+        public string Activity { get; set; }
+        public string ActivityDetail { get; set; }
 
 
         public IEnumerable<ValidationResult> Validate(
