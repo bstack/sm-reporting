@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: reporting
-          image: sm-scalablemicroservices/reporting
+          image: billystack/sm-reporting:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80

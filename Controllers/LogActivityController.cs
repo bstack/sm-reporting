@@ -24,14 +24,9 @@ namespace reporting.Controllers
         public IActionResult Post(
             [FromBody] Models.LogActivityRequest logActivityRequest)
         {
-            Console.WriteLine($"111111111111111111111");
             var _requestId = Request.Headers["X-Request-Id"].ToString();
-            Console.WriteLine($"22222222222222222222222222");
             var _correlationId = Request.Headers["X-Correlation-Id"].ToString();
 
-            Console.WriteLine($"3333333333333333333333333");
-
-            Console.WriteLine("SDFSDFDFSDF");
             var _logActivity = new Entity.LogActivity(
                 Guid.Parse(_correlationId),
                 Guid.Parse(_requestId),
@@ -39,9 +34,7 @@ namespace reporting.Controllers
                 logActivityRequest.Activity,
                 logActivityRequest.ActivityDetail);
 
-            Console.WriteLine($"4444444444444444444444444");
             this.c_logActivityRepository.Log(_logActivity);
-            Console.WriteLine("SDFSDFDFSDF");
 
             return this.StatusCode(StatusCodes.Status201Created);
         }
