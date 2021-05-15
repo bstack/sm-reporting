@@ -38,7 +38,7 @@ namespace reporting.Data
             var _keys = _redisKeys.Select(redisKey => (string)redisKey).ToArray();
             var _values = _keys.Select(key => this.c_database.StringGet(key)).ToArray();
             var _logs = _values.Select(value => JsonSerializer.Deserialize<LogActivity>(value));
-            var _orderedAndFilteredLogs =  _logs.OrderByDescending(log => log.Timestamp).Take(15);
+            var _orderedAndFilteredLogs =  _logs.OrderByDescending(log => log.Timestamp).Take(200);
 
             return _orderedAndFilteredLogs;
         }

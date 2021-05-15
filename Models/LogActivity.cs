@@ -18,7 +18,7 @@ namespace reporting.Models
 
         public override string ToString()
         {
-            return $"LogActivity[Id: {this.Id}, CorrelationId:{this.CorrelationId}, RequestId:{this.RequestId}, Service:{this.Service}, Activity:{this.Activity}, ActivityDetail:{this.ActivityDetail}, Timestamp:{this.Timestamp.ToLongTimeString()} ]";
+            return $"LogActivity[Id: {this.Id}, CorrelationId:{this.CorrelationId}, RequestId:{this.RequestId}, Service:{this.Service}, Activity:{this.Activity}, ActivityDetail:{this.ActivityDetail}, Timestamp:{this.Timestamp.ToString("dd/MM/yyyy HH:mm:ss")} ]";
         }
     }
 }
