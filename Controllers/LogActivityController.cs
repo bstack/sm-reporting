@@ -60,7 +60,7 @@ namespace reporting.Controllers
                         Timestamp = item.Timestamp
                     }.ToString());
 
-            return this.StatusCode(StatusCodes.Status201Created, _logActivityModel);
+            return this.StatusCode(StatusCodes.Status200OK, _logActivityModel);
         }
     }
 }
